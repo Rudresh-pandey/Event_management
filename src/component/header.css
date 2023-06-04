@@ -1,0 +1,58 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left{
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+    padding: 2px 4px;
+    font-weight: 600;
+
+
+}
+a.link:hover{
+    color: black;
+    border-bottom: 1px solid black;
+}
+img#logo{
+    height: 60px;
+    width: 150px;
+
+}
+img#notify{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+img#userimg{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#createEV{
+    /* border: 1px solid black; */
+    padding: 6px 8px;
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+}
+
+
