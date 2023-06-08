@@ -6,21 +6,23 @@ function Header() {
     <>
       <div className="navbar">
         <div className="left">
-          <img id="logo" src="logo1.jpg" alt="" />
+          <Link to={"/"}>
+            <img id="logo" src="logo1.jpg" alt="" />
+          </Link>
           <Link className="link" to={"/sports"}>
-            sports
+            Sports
           </Link>
           <Link className="link" to={"/concert"}>
-            concert
+            Concert
           </Link>
           <Link className="link" to={"/virtual"}>
-            virtual
+            Virtual
           </Link>
           <Link className="link" to={"/community"}>
-            community
+            Community
           </Link>
           <Link className="link" to={"/conference"}>
-            conference
+            Conference
           </Link>
         </div>
         <div className="right">

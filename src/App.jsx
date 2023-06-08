@@ -1,22 +1,22 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Homepage from "./pages/Homepage";
-import Sports from "./pages/Sports";
-import Concert from "./pages/Concert";
-import Virtual from "./pages/Virtual";
-import Community from "./pages/Community";
-import Conferences from "./pages/Conferences";
+// import Sports from "./pages/Sports";
+// import Concert from "./pages/Concert";
+// import Virtual from "./pages/Virtual";
+// import Community from "./pages/Community";
+// import Conferences from "./pages/Conferences";
+import Layout from "./component/Layout";
 
 function App() {
   return (
     <div className="container">
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/sports" element={<Sports />} />
-        <Route path="/concert" element={<Concert />} />
-        <Route path="/virtual" element={<Virtual />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/conferences" element={<Conferences />} />
+        <Route path="/" element={<Layout img={"event.png"} />} />
+        <Route path="/sports" element={<Layout img={"sports.png"} />} />
+        <Route path="/concert" element={<Layout img={"concert.png"} />} />
+        <Route path="/virtual" element={<Layout img={"virtual.jpg"} />} />
+        <Route path="/community" element={<Layout img={"community.jpg"} />} />
+        <Route path="/conference" element={<Layout img={"conference.jpg"} />} />
       </Routes>
     </div>
   );
