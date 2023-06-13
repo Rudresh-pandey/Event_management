@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "./header.css";
+import { useContext } from "react";
+import { UserContext } from "../UserContext";
 
 function Header() {
+  const { user } = useContext(UserContext);
   return (
     <>
       <div className="navbar">
@@ -29,15 +32,21 @@ function Header() {
           <Link id="createEV" to={"/create"}>
             Create an Event
           </Link>
+          {user ? (
+            <>
+              <img id="notify" src="bellicon.png" alt="" />
 
-          <Link to={"/registration"}>sign up</Link>
-          <Link to={"/login"}>login</Link>
-
-          {/* <img id="notify" src="bellicon.png" alt="" />
-
-          <Link to={"/user/:id"}>
-            <img id="userimg" src="user4.png" alt="" />
-          </Link> */}
+              <Link to={"/account"} id="user">
+                <img id="userimg" src="user4.png" alt="" />
+                <p>{user.name}</p>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to={"/registration"}>sign up</Link>
+              <Link to={"/login"}>login</Link>
+            </>
+          )}
         </div>
       </div>
     </>
