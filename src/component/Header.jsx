@@ -30,11 +30,14 @@ function Header() {
             Create an Event
           </Link>
 
-          <img id="notify" src="bellicon.png" alt="" />
+          <Link to={"/registration"}>sign up</Link>
+          <Link to={"/login"}>login</Link>
+
+          {/* <img id="notify" src="bellicon.png" alt="" />
 
           <Link to={"/user/:id"}>
             <img id="userimg" src="user4.png" alt="" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>

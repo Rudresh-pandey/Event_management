@@ -8,7 +8,7 @@
 .intro{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     gap: 2rem;
     margin-bottom: 1rem;
 }
@@ -45,11 +45,13 @@
 }
 
 .quote a{
-    width: 7rem;
-    padding: 6px 8px;
+    width: 10rem;
+    padding: 8px 10px;
     background-color: orange;
     color: black;
     font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
 }
 
 .int-img img{
@@ -64,6 +66,8 @@
     width: 100%;
     justify-content: center;
     gap: 1rem;
+    background-color: #F5F7F6;
+    padding: 1rem 0px;
 }
 
 .searchbar {
@@ -84,7 +88,7 @@
 
 .searchbar input{
     width: 100%;
-    padding: 6px 6px;
+    padding: 10px 10px;
     border: none;
     outline: none;
     font-size: 1em;
@@ -99,4 +103,56 @@
     font-weight: bold;
     font-size: 1em;
     border: none;
+}
+
+.Events{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-around;
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.loc{
+    display: flex; 
+    gap: 10px;
+    flex-direction: column;
+}
+
+h4{
+    margin: 0px;
+    margin-left: 4px;
+}
+
+.status{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.price{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.evInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 60%;
+}
+
+.ev{
+    width: 100%;
+    height: 10rem;
+    background-color: cadetblue;
 }

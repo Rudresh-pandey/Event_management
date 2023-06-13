@@ -1,0 +1,30 @@
+.container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form input{
+    height: 20px;
+    padding: 4px 8px;
+    border: none ;
+    border-bottom: 1px solid black;
+}
+
+.form input:focus{
+    border: none;
+}
+
+.form input:focus-visible{
+    border: none;
+}
+
+.form button{
+    height: 30px;
+    font-weight: 600;
+}
