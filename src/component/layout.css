@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .intro{
@@ -11,6 +12,7 @@
     align-items: center;
     gap: 2rem;
     margin-bottom: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .int1{
@@ -21,9 +23,11 @@
 
 .heading , .subheading{
     margin: 0px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .heading{
-    font-size: 2em;
+    font-size: 2.3em;
 }
 .subheading{
     font-size: small;
@@ -45,10 +49,10 @@
 }
 
 .quote a{
-    width: 10rem;
+    width: 12rem;
     padding: 8px 10px;
-    background-color: orange;
-    color: black;
+    /* background-color: orange; */
+    /* color: black; */
     font-weight: bold;
     font-size: 1.3em;
     text-align: center;

@@ -34,12 +34,19 @@ function Header() {
           </Link>
           {user ? (
             <>
-              <img id="notify" src="bellicon.png" alt="" />
-
-              <Link to={"/account"} id="user">
-                <img id="userimg" src="user4.png" alt="" />
-                <p>{user.name}</p>
-              </Link>
+              <i className="fa fa-bell fa-lg"></i>
+              <div className="dropdown">
+                <Link className="dropbtn" to={"/account"}>
+                  <i className="fa fa-user fa-2x"></i>
+                  <p>{user.name}</p>
+                </Link>
+                <div className="dropdown-content">
+                  <Link to={"/account"}>Portfolio</Link>
+                  <Link to={"/account/events"}>Events joined</Link>
+                  <Link to={"/account/createdevs"}>Events Created</Link>
+                  <Link to={"/logout"}>Log out</Link>
+                </div>
+              </div>
             </>
           ) : (
             <>

@@ -20,8 +20,12 @@ function Layout({ img }) {
             </div>
             <div className="int2">
               <div className="quote">
-                <h3>create, promote, and join a wide range of events</h3>
-                <Link to={"/events"}>Browse Events</Link>
+                <h3 className="font-semibold text-xl">
+                  create, promote, and join a wide range of events
+                </h3>
+                <Link to={"/events"} className="bg-slate-950 text-yellow-500">
+                  Browse Events
+                </Link>
               </div>
               <div className="int-img">
                 <img src={img} alt="" />
