@@ -31,11 +31,12 @@ function Login() {
 
   return (
     <div className="container">
-      <h2>Login</h2>
-      <form action="" className="form" onSubmit={loginUser}>
+      <h2 className="">Login</h2>
+      <form action="" className="form " onSubmit={loginUser}>
         <input
           type="email"
           placeholder="youremail@gmail.com"
+          className=""
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);

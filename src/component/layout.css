@@ -27,7 +27,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .heading{
+    font-family:  'Poppins', sans-serif;
     font-size: 2.3em;
+    font-weight: bold;
 }
 .subheading{
     font-size: small;
@@ -51,8 +53,8 @@
 .quote a{
     width: 12rem;
     padding: 8px 10px;
-    /* background-color: orange; */
-    /* color: black; */
+    background-color: orange; 
+     color: black;
     font-weight: bold;
     font-size: 1.3em;
     text-align: center;

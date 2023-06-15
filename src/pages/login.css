@@ -1,4 +1,4 @@
-.container{
+ .container{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
     
@@ -22,9 +22,9 @@
 
 .form input:focus-visible{
     border: none;
-}
+} 
 
 .form button{
     height: 30px;
     font-weight: 600;
-}
+} 

@@ -1,3 +1,87 @@
 .accountPage{
-    
+    /* display: flex;
+    width: 100%;
+    justify-content: space-around; */
+    margin-top:1.5rem;
+}
+
+
+.profile{
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-around;
+}
+.user{
+    display: flex;
+}
+.userImg{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.userDetail{
+    display: flex;
+    flex-direction: column;
+}
+
+.bio h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+.bio p{
+    max-width: 700px;
+}
+
+.socials h3{
+    font-family: 'Poppins', sans-serif;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link{
+    display: flex;
+    gap: 2rem;
+}
+
+.editInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.editInfo button#edit{
+    background-color: #23A196;
+}
+
+.editInfo button{
+    color: white;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 1em;
+    border: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.editInfo button#save{
+    background-color: #1F78D1;
+}
+
+.editInfo button#save:hover{
+    background-color: #185fa5;
+}
+.editInfo button#edit:hover{
+    background-color: #1a776f;
+}
+
+.sociallink{
+    justify-content: space-between;
+    display: flex;
+    gap: 1rem;
 }
