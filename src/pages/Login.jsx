@@ -30,9 +30,9 @@ function Login() {
   }
 
   return (
-    <div className="container">
+    <div className="formpage">
       <h2 className="">Login</h2>
-      <form action="" className="form " onSubmit={loginUser}>
+      <form action="" className="form" onSubmit={loginUser}>
         <input
           type="email"
           placeholder="youremail@gmail.com"

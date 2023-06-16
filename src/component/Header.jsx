@@ -1,10 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./header.css";
 import { useContext } from "react";
 import { UserContext } from "../UserContext";
+import axios from "axios";
 
 function Header() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+  async function logoutUser() {
+    try {
+      await axios.post("/logout");
+      setUser(null);
+      navigate("/");
+      // <Navigate to={"/"} />;
+      // window.location.reload();
+    } catch (err) {
+      alert("something not working , try later");
+    }
+  }
+
   return (
     <>
       <div className="navbar">
@@ -44,7 +58,7 @@ function Header() {
                   <Link to={"/account"}>Portfolio</Link>
                   <Link to={"/account/events"}>Events joined</Link>
                   <Link to={"/account/createdevs"}>Events Created</Link>
-                  <Link to={"/logout"}>Log out</Link>
+                  <Link onClick={logoutUser}>Log out</Link>
                 </div>
               </div>
             </>

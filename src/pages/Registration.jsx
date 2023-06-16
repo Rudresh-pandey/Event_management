@@ -22,7 +22,7 @@ function Registration() {
   }
 
   return (
-    <div className="container">
+    <div className="formpage">
       <h2>Sign up</h2>
       <form action="" className="form" onSubmit={registerUser}>
         <input
