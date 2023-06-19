@@ -1,0 +1,122 @@
+
+
+.createbtn{
+    text-align: center;
+}
+
+.createbtn a{
+    background-color: orange;
+    color: black;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 4px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.eventform{
+    display: flex;
+    max-width: 77em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+
+
+.event-form h2{
+    margin: 0px;
+}
+
+.event-form input{
+    height: 30px;
+    padding: 4px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    border-radius: 1rem;
+    border: 1px solid gray;
+}
+.event-form textarea{
+    height: 100px;
+    padding: 8px 10px;
+    font-family:  sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+
+.modeselection{
+    display: flex; 
+    gap: 1rem;   
+}
+
+.modeselection div{
+    display: flex;
+    align-items: center;
+
+}
+.date{
+    display: flex;
+    gap: 3rem;
+}
+.date div{
+    align-items: center;
+}
+
+
+
+.guestdetail{
+    display: flex;
+    gap: .5rem;
+}
+
+.guestdetail label{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    padding: 4px 8px;
+    background-color: whitesmoke;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button.addmoreguests{
+    padding: 6px 8px;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    background-color: orange;
+    border: none;
+    color: black;
+    font-weight: 600;
+
+}
+
+button#savebtn{
+    border-radius: 1rem;
+    background-color: orange;
+    border: none;
+    font-size: x-large;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+button#savebtn:hover{
+    background-color: rgb(254, 180, 43);
+}

@@ -14,10 +14,10 @@ function App() {
     <UserContextProvider>
       <div className="container">
         <Routes>
-          <Route path="/" element={<Layout img={"event.png"} />}></Route>
+          <Route path="/" element={<Layout img={"virtual.jpg"} />}></Route>
           <Route path="/sports" element={<Layout img={"sports.png"} />} />
           <Route path="/concert" element={<Layout img={"concert.png"} />} />
-          <Route path="/virtual" element={<Layout img={"virtual.jpg"} />} />
+          <Route path="/virtual" element={<Layout img={"event.png"} />} />
           <Route path="/community" element={<Layout img={"community.jpg"} />} />
           <Route
             path="/conference"
@@ -26,6 +26,7 @@ function App() {
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/account/:subpage?" element={<AccoutPage />} />
+          <Route path="/account/:subpage/:action" element={<AccoutPage />} />
         </Routes>
       </div>
     </UserContextProvider>

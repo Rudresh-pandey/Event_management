@@ -3,6 +3,7 @@ import "./register.css";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,29 +31,69 @@ function Login() {
   }
 
   return (
-    <div className="formpage">
-      <h2 className="">Login</h2>
-      <form action="" className="form" onSubmit={loginUser}>
-        <input
-          type="email"
-          placeholder="youremail@gmail.com"
-          className=""
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
+    // <div className="formpage">
+    //   <h2 className="">Login</h2>
+    //   <form action="" className="form" onSubmit={loginUser}>
+    //     <input
+    //       type="email"
+    //       placeholder="youremail@gmail.com"
+    //       className=""
+    //       value={email}
+    //       onChange={(e) => {
+    //         setEmail(e.target.value);
+    //       }}
+    //     />
+    //     <input
+    //       type="password"
+    //       placeholder="password"
+    //       value={password}
+    //       onChange={(e) => {
+    //         setPassword(e.target.value);
+    //       }}
+    //     />
 
-        <button type="submit">Login</button>
-      </form>
+    //     <button type="submit">Login</button>
+    //   </form>
+    // </div>
+
+    <div className="formpage">
+      <div className="page">
+        <div className="logo">
+          <Link to={"/"}>Event Cafe</Link>
+        </div>
+        <form action="" className="form" onSubmit={loginUser}>
+          <h1>Welcome back !</h1>
+
+          <input
+            type="email"
+            placeholder="youremail@gmail.com"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+
+          <button type="submit">Login</button>
+          <p className="already">
+            don&apos;t have an accout?{" "}
+            <Link to={"/registration"}>Create account</Link>{" "}
+          </p>
+        </form>
+      </div>
+      <div className="side">
+        <div>
+          <h1>Welcome Back , Login to Proceed your work</h1>
+        </div>
+        <img src="BackGround.png" alt="" />
+      </div>
     </div>
   );
 }

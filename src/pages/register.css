@@ -1,11 +1,41 @@
-
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
 
 .formpage{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 24px 8%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.side {
     display: flex;
     flex-direction: column;
+    gap: 4rem;
+}
+
+.side div{
+    /* position: absolute; */
+    /* margin-left: 2rem; */
+    width: 600px;
     align-items: center;
-    margin-top: 2rem;
+}
+
+.side div h1{
+    font-weight: bold;
+    /* font-family: "Poppins"; */
+}
+
+.side img{
+    height: 50vh;
+    width: 100%;
+    /* object-fit: cover; */
+    border: 1px solid navy;
+    border-radius: 10px;
 }
 
 .form{
@@ -16,21 +46,48 @@
 }
 
 .form input{
-    height: 20px;
-    padding: 4px 8px;
-    border: none ;
-    border-bottom: 1px solid black;
+    padding: 12px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #fafafa;
+}
+
+.form input:hover{
+    outline: 2px solid #408cff;
 }
 
 .form input:focus{
-    border: none;
-}
-
-.form input:focus-visible{
-    border: none;
+    outline: 2px solid #408cff;
 }
 
 .form button{
-    height: 30px;
+    padding: 12px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.logo a{
     font-weight: 600;
+    font-size: 1.5em;
+  }
+
+.page{
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.form h1{
+    font-family: "Poppins",sans-serif;
+}
+
+.already a{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.already a:hover{
+    color: #408cff;
 }

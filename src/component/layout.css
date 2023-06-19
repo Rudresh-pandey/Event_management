@@ -1,115 +1,135 @@
 .hero{
-    margin-top: 3rem;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    /* max-width: 77em; */
+    padding: 24px 12%;
 }
 
 .intro{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 3% 0px;
+}
+
+.int{
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 2.5rem;
 }
 
 .int1{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap:.5rem;
 }
-
-.heading , .subheading{
-    margin: 0px;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.heading{
-    font-family:  'Poppins', sans-serif;
-    font-size: 2.3em;
-    font-weight: bold;
-}
-.subheading{
-    font-size: small;
-}
-
-.int2{
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-}
-
-.quote{
+.int2 {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
-.quote h3{
-    width: 250px;
+.int2 div{
+    display: flex;
+    gap: 2rem;
 }
 
-.quote a{
-    width: 12rem;
-    padding: 8px 10px;
-    background-color: orange; 
-     color: black;
-    font-weight: bold;
-    font-size: 1.3em;
-    text-align: center;
+.int2 div a{
+    padding: 20px 30px;
+    border-radius: 30px;
 }
 
-.int-img img{
-    height: 230px;
-    width: 330px;
-    transform: scaleX(-1);
+.int2 div a.evbtn.c{ 
+    background-color: #2a62fe;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
+
+.int2 div a.evbtn.b{ 
+    border: 1px solid rgb(209, 209, 209);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+img.eventimg{
+    height: 400px;
+    width: 550px;
+}
+
+
+p.heading{
+    max-width: 500px;
+    font-size: 3.7em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 4.5rem;
+}
+
 
 
 .search{
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
+    padding: 1.5rem 1.5rem;
+    /* background-color: ; */
     gap: 1rem;
-    background-color: #F5F7F6;
-    padding: 1rem 0px;
+    box-shadow: 1px 1px 2px #7e7e7e;
+    border-radius: 10px;
 }
 
-.searchbar {
-    border: 1px solid black;
-    padding: 0px 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    width: 50%;
+.searchInputs{
     display: flex;
-    align-items: center;
+    width: 100%;
     justify-content: space-between;
 }
 
-.searchbar span img{
-    height: 15px;
-    width: 15px;
+.searchInputs input{
+    width: 28%;
+    /* height: 30px; */
+    padding: 4px 10px;
+    border: 1px solid rgb(223, 223, 223);
+    font-size: 1em;
 }
 
-.searchbar input{
-    width: 100%;
-    padding: 10px 10px;
-    border: none;
+.searchInputs input:focus{
     outline: none;
-    font-size: 1em;
-    font-weight: bold;
 }
 
-.btn-search{
-    /* width: 7rem; */
-    padding: 12px 14px;
-    background-color: orange;
-    color: black;
-    font-weight: bold;
-    font-size: 1em;
+.searchInputs button{
+    padding: 8px 14px;
+    background-color: #2a62fe;
+    color: white;
     border: none;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: "Montserrat" , sans-serif;
 }
+
+.searchInputs button:hover{
+    background-color: #013fe9;
+}
+
+.recommendbtn{
+    display: flex;
+    gap: 2rem;
+}
+
+.recommendbtn button{
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 30px;
+    border: none;
+    background-color: #F5F7F6;
+}
+
 
 .Events{
     width: 100%;

@@ -6,7 +6,7 @@ export const UserContext = createContext({});
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
-
+  const [eventCreated, setEventCreated] = useState(null);
   useEffect(() => {
     // window.location.reload();
     if (!user) {
@@ -18,7 +18,9 @@ export function UserContextProvider({ children }) {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser, ready }}>
+    <UserContext.Provider
+      value={{ user, setUser, ready, eventCreated, setEventCreated }}
+    >
       {children}
     </UserContext.Provider>
   );

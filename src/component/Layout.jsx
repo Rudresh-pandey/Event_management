@@ -11,35 +11,51 @@ function Layout({ img }) {
         <Header />
         <div className="hero">
           <div className="intro">
-            <div className="int1">
-              <h1 className="heading">The Gateways for Events</h1>
-              <p className="subheading">
-                &quot;Bringing Together the Finest Minds and Moments in
-                Events&quot;
-              </p>
+            <div className="int">
+              <div className="int1">
+                <p className="preheading">100+ EVENTS ORGANISED</p>
+                <p className="heading">The Gateways for Events</p>
+                <p className="subheading">
+                  &quot;Bringing Together the Finest Minds and Moments in
+                  Events&quot;
+                </p>
+                <h3>create, promote, and join a wide range of events</h3>
+              </div>
+              <div className="int2">
+                <div>
+                  <Link to={"/account/createdevs"} className="evbtn c">
+                    Create Events
+                    <span className="fa fa-file-text-o"></span>
+                  </Link>
+                  <Link to={"/events"} className="evbtn b">
+                    Browse Events
+                    <span className="fa fa-external-link"></span>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="int2">
-              <div className="quote">
-                <h3 className="">
-                  create, promote, and join a wide range of events
-                </h3>
-                <Link to={"/events"} className="">
-                  Browse Events
-                </Link>
-              </div>
-              <div className="int-img">
-                <img src={img} alt="" />
-              </div>
+            <div>
+              <img src={img} alt="" className="eventimg" />
             </div>
           </div>
           <div className="search">
-            <div className="searchbar">
-              <span>
-                <img src="search.png" alt="" />
-              </span>
-              <input type="search" />
+            <div className="searchInputs">
+              <input
+                type="text"
+                placeholder=" &nbsp;🔍 &nbsp;Events, Organiser, Keyword"
+              />
+
+              <input type="text" placeholder=" &nbsp;🎯 &nbsp;Anywhere" />
+              <input type="text" placeholder=" &nbsp;📅 &nbsp;Anytime" />
+              <button>Search</button>
             </div>
-            <button className="btn-search">Search Events</button>
+            <div className="recommendbtn">
+              <button>Today</button>
+              <button>Tomorrow</button>
+              <button>This week</button>
+              <button>Sports</button>
+              <button>Community</button>
+            </div>
           </div>
 
           <div className="Events">

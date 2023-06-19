@@ -1,72 +1,120 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./header.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../UserContext";
 import axios from "axios";
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
+  const [hamMenu, setHamMenu] = useState(false);
   const navigate = useNavigate();
   async function logoutUser() {
     try {
       await axios.post("/logout");
-      setUser(null);
       navigate("/");
+      setUser(null);
       // <Navigate to={"/"} />;
       // window.location.reload();
     } catch (err) {
       alert("something not working , try later");
     }
   }
-
+  function openmenu() {
+    setHamMenu(!hamMenu);
+  }
   return (
     <>
       <div className="navbar">
-        <div className="left">
-          <Link to={"/"}>
-            <img id="logo" src="logo1.jpg" alt="" />
-          </Link>
-          <Link className="link" to={"/sports"}>
-            Sports
-          </Link>
-          <Link className="link" to={"/concert"}>
-            Concert
-          </Link>
-          <Link className="link" to={"/virtual"}>
-            Virtual
-          </Link>
-          <Link className="link" to={"/community"}>
-            Community
-          </Link>
-          <Link className="link" to={"/conference"}>
-            Conference
-          </Link>
+        <div className="logo">
+          <Link to={"/"}>Event Cafe</Link>
         </div>
-        <div className="right">
-          <Link id="createEV" to={"/create"}>
+
+        {user ? (
+          <div className="urls">
+            <div className="hidemenu">
+              <Link className="link" to={"/"}>
+                Home
+              </Link>
+              <Link className="link" to={"/events"}>
+                Events
+              </Link>
+            </div>
+            <div className={hamMenu ? "user-links open" : "user-links"}>
+              <Link className="link" to={"/"}>
+                Home
+              </Link>
+              <Link className="link" to={"/events"}>
+                Events
+              </Link>
+
+              <div className={hamMenu ? "nothidelink" : "hidelink"}>
+                <Link to={"/account"}>Portfolio</Link>
+                <Link to={"/account/events"}>Events joined</Link>
+                <Link to={"/account/createdevs"}>Events Created</Link>
+                <Link onClick={logoutUser}>Log out</Link>
+              </div>
+            </div>
+
+            <div className="searching">
+              <input type="text" />
+              <span>
+                <i className="fa fa-search"></i>
+              </span>
+            </div>
+          </div>
+        ) : (
+          <div className="urls">
+            <div className={hamMenu ? "url-links open" : "url-links"}>
+              <Link className="link" to={"/"}>
+                Home
+              </Link>
+              <Link className="link" to={"/events"}>
+                Events
+              </Link>
+              <div id="log-reg">
+                <Link to={"/login"}>Log in</Link>
+                <Link to={"/registration"}>Register</Link>
+              </div>
+            </div>
+            <div className="searching">
+              <input type="text" />
+              <span>
+                <i className="fa fa-search"></i>
+              </span>
+            </div>
+          </div>
+        )}
+
+        <div>
+          {/* <Link id="createEV" to={"/create"}>
             Create an Event
-          </Link>
+          </Link> */}
           {user ? (
-            <>
-              <i className="fa fa-bell fa-lg"></i>
+            <div>
               <div className="dropdown">
+                {/* <i className="fa fa-bell fa-lg"></i> */}
                 <Link className="dropbtn" to={"/account"}>
                   <i className="fa fa-user fa-2x"></i>
-                  <p>{user.name}</p>
                 </Link>
-                <div className="dropdown-content">
-                  <Link to={"/account"}>Portfolio</Link>
-                  <Link to={"/account/events"}>Events joined</Link>
-                  <Link to={"/account/createdevs"}>Events Created</Link>
-                  <Link onClick={logoutUser}>Log out</Link>
-                </div>
+                <div
+                  className={hamMenu ? "fa fa-close" : "fa fa-bars"}
+                  id="user-icon"
+                  onClick={openmenu}
+                ></div>
               </div>
-            </>
+            </div>
           ) : (
-            <>
-              <Link to={"/registration"}>sign up</Link>
-              <Link to={"/login"}>login</Link>
-            </>
+            <div className="right">
+              <div id="logreg">
+                <Link to={"/login"}>Log in</Link>
+                <Link to={"/registration"}>Register</Link>
+              </div>
+              <div
+                className={hamMenu ? "fa fa-close" : "fa fa-bars"}
+                id="menu-icon"
+                onClick={openmenu}
+              ></div>
+            </div>
           )}
         </div>
       </div>
