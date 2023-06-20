@@ -12,6 +12,7 @@ function AccoutPage() {
   const [tlink, setTlink] = useState("");
   const [wlink, setWlink] = useState("");
   const [llink, setLlink] = useState("");
+  const [userpos, setUserPos] = useState("");
   const [disable, setDisable] = useState(true);
   const [hide, setHide] = useState(true);
   const { ready, user, setUser } = useContext(UserContext);
@@ -33,6 +34,7 @@ function AccoutPage() {
     setTlink(user.twitter);
     setWlink(user.website);
     setLlink(user.linkedin);
+    setUserPos(user.position);
     setHide(false);
     setDisable(false);
   }
@@ -48,6 +50,7 @@ function AccoutPage() {
           tlink,
           wlink,
           llink,
+          userpos,
         })
         .then(({ data }) => {
           setUser(data);
@@ -64,33 +67,77 @@ function AccoutPage() {
       <div className="accountPage">
         {subpage === "profile" && (
           <div className="profile">
+            <div className="bg"></div>
+
             <div className="user">
-              <div className="userImg">
-                <i
-                  className="fa fa-user-circle-o "
-                  style={{ fontSize: "150px" }}
-                ></i>
-                <input type="file" />
+              <div className="userProfile">
+                <div className="userImg">
+                  <img src="man.png" alt="" />
+                  <input type="file" />
+                </div>
+                {/* <i
+                    className="fa fa-user-circle-o "
+                    style={{ fontSize: "150px" }}
+                  ></i> */}
+                <div className="username">
+                  <h1>Rudresh Pandey</h1>
+                  <h3>{user.position || "Your Position"}</h3>
+                </div>
+                <div className="editInfo">
+                  <button id="edit" onClick={editInfo}>
+                    Edit
+                  </button>
+                  <button id="save" onClick={saveInfo} disabled={disable}>
+                    Save
+                  </button>
+                </div>
               </div>
               <div className="userDetail">
                 <div className="bio">
-                  <h1>Rudresh Pandey</h1>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quia neque culpa sed ut molestias, praesentium nobis nulla
-                    placeat, nesciunt, quisquam distinctio! Eos officiis quia
-                    quaerat dicta nisi consectetur, veritatis expedita minima
-                    placeat dolorum fuga quis et facere quasi porro consequatur
-                    quam rerum a temporibus. Nostrum hic dolorem alias error
-                    quaerat?
-                  </p>
+                  <h2>Personal info.</h2>
+                  <div className="personalinfo">
+                    <div className="person">
+                      <div className="perInfo">
+                        <label htmlFor="">
+                          <small>First Name</small>
+                          <p>Rudresh</p>
+                        </label>
+                        <label htmlFor="">
+                          <small>Email address</small>
+                          <p>rudreshpandey@gmail.com</p>{" "}
+                        </label>
+                      </div>
+                      <div className="perInfo">
+                        <label htmlFor="">
+                          <small>Last Name</small> <p>Pandey</p>
+                        </label>
+
+                        <label htmlFor="">
+                          <small>Phone</small>
+                          <p>+91 89321911</p>
+                        </label>
+                      </div>
+                    </div>
+                    <label htmlFor="">
+                      <small>Bio</small>
+                      <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Quia neque culpa sed ut molestias, praesentium
+                        nobis nulla placeat, nesciunt, quisquam distinctio! Eos
+                        officiis quia quaerat dicta nisi consectetur, veritatis
+                        expedita minima placeat dolorum fuga quis et facere
+                        quasi porro consequatur quam rerum a temporibus. Nostrum
+                        hic dolorem alias error quaerat?
+                      </p>
+                    </label>
+                  </div>
                 </div>
                 <div className="socials">
-                  <h3>Socials</h3>
+                  <h2>Social urls.</h2>
                   <div className="links">
                     <div className="link">
                       <label htmlFor="">
-                        Github <br />
+                        <small> Github </small> <br />
                         <div className="sociallink">
                           <label htmlFor="" hidden={hide}>
                             previous:
@@ -112,7 +159,7 @@ function AccoutPage() {
                         </div>
                       </label>
                       <label htmlFor="">
-                        LinkedIn
+                        <small> LinkedIn</small>
                         <div className="sociallink">
                           <label htmlFor="" hidden={hide}>
                             previous:
@@ -136,7 +183,8 @@ function AccoutPage() {
                     </div>
                     <div className="link">
                       <label htmlFor="">
-                        Twitter <br />
+                        <small> Twitter </small>
+                        <br />
                         <div className="sociallink">
                           <label htmlFor="" hidden={hide}>
                             previous:
@@ -158,7 +206,7 @@ function AccoutPage() {
                         </div>
                       </label>
                       <label htmlFor="">
-                        Website
+                        <small> Website</small>
                         <br />
                         <div className="sociallink">
                           <label htmlFor="" hidden={hide}>
@@ -184,14 +232,6 @@ function AccoutPage() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="editInfo">
-              <button id="edit" onClick={editInfo}>
-                Edit
-              </button>
-              <button id="save" onClick={saveInfo} disabled={disable}>
-                Save
-              </button>
             </div>
           </div>
         )}

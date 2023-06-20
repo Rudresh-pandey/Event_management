@@ -1,46 +1,122 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+
 .accountPage{
     /* display: flex;
     width: 100%;
     justify-content: space-around; */
     margin-top:8%;
-}
+    padding: 0px 8%;
+    /* background-color: #01112d; */
+}   
 
 
 .profile{
     display: flex;
     /* width: 100%; */
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.bg{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    height: 35vh;
+    background-color:#003E54;;
+}
+
 .user{
     display: flex;
+    flex-direction: column;
 }
 .userImg{
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+}
+.userImg img{
+    /* margin-top: 2%; */
+    padding: 0px;
+    margin: 0px;
+    height: 170px;
+    width: 170px;
+    border: 5px solid white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px 0px #000000;
+
+}
+
+.userProfile{
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+
+}
+
+.userImg input{
+    width: 90px;
 }
 
 .userDetail{
     display: flex;
     flex-direction: column;
+    padding: 0px 15%;
+    gap: 2rem;
 }
 
-.bio h1{
+.username{
+    padding: 20px 20px;
+    margin-top: -5%;
+}
+
+.username h1{
     font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 3em;
 }
 
-.bio p{
-    max-width: 700px;
+.username h3{
+    color: white;
 }
 
-.socials h3{
-    font-family: 'Poppins', sans-serif;
+.bio{
+    border: 1px solid rgb(209 209 209);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+}
+
+.socials{
+    border: 1px solid rgb(209 209 209);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+}
+
+
+.bio h2{
+    font-weight: 900;
+}
+
+
+.socials h2{
+    font-weight: 900;
 }
 
 .links{
+    margin-top: 30px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .link{
@@ -52,6 +128,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: -3%;
+    padding: 0px 10px;
 }
 
 
@@ -84,4 +162,46 @@
     justify-content: space-between;
     display: flex;
     gap: 1rem;
+    align-items: center;
+}
+
+.personalinfo{
+    /* padding: 20px 0px; */
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.personalinfo {
+    display: flex;
+    gap: 2rem;
+}
+
+.person{
+    display: flex;
+    gap: 5rem;
+}
+
+.perInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+label small{
+    color: #1F78D1;
+    font-weight: bold;
+}
+label p{
+    margin-top: 5px;
+}
+
+label div{
+    margin-top: 10px;
+}
+
+label div input{
+    padding: 10px 10px;
 }

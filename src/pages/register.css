@@ -50,6 +50,12 @@
     border-radius: 10px;
     border: none;
     background-color: #fafafa;
+    color: black;
+    font-weight: 800;
+}
+
+.form input::placeholder{
+    font-weight: 500;
 }
 
 .form input:hover{
