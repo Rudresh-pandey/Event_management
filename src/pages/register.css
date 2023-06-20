@@ -52,6 +52,7 @@
     background-color: #fafafa;
     color: black;
     font-weight: 800;
+    border: 1px solid rgb(232, 232, 232);
 }
 
 .form input::placeholder{
@@ -92,6 +93,7 @@
 .already a{
     font-weight: bold;
     text-decoration: underline;
+    color: black;
 }
 
 .already a:hover{

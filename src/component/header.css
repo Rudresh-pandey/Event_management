@@ -5,8 +5,6 @@
   padding: 0px;
 }
 
-
-
 .navbar{
   display: flex;
   justify-content: space-between;
@@ -18,7 +16,7 @@
   background:#f7f6f6;
   position:fixed;
   top: 0;
-
+  color: black;
 }
 
 a{
@@ -29,6 +27,7 @@ a{
 .logo a{
   font-weight: 600;
   font-size: 1.5em;
+  color: black;
 }
 
 .urls{
@@ -125,6 +124,8 @@ a{
   transition: all .50s ease;
 }
 
+
+
 .user-links a{
   display: block;
   margin: 12px 0;
@@ -142,6 +143,7 @@ a{
 }
 
 #logreg a{
+  color: black;
   padding: 12px 18px;
   border-radius: 2rem;
 }
@@ -173,7 +175,9 @@ a{
   gap: 2rem;
 }
 
-
+.dropbtn{
+  color: black;
+}
 
 
 .dropdown-content{

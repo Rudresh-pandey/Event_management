@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./account.css";
 import axios from "axios";
 import EventsCreated from "./EventsCreated";
+import Footer from "../component/Footer";
 
 function AccoutPage() {
   const [glink, setGlink] = useState("");
@@ -237,6 +238,7 @@ function AccoutPage() {
         )}
         {subpage === "createdevs" && <EventsCreated />}
       </div>
+      <Footer />
     </>
   );
 }
