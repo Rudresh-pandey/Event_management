@@ -14,7 +14,8 @@
   z-index: 1000;
   transition: all .50s ease;
   background:#f7f6f6;
-  position:fixed;
+  /* position:fixed; */
+  position: relative;
   top: 0;
   color: black;
 }
@@ -40,15 +41,17 @@ a{
   margin: 0px 30px;
   transition: all .5s ease;
   color: #7d7d7d;
+  /* font-size: 1.2em; */
 }
 
 .searching input{
   width: 350px;
-  padding: 4px 0px;
+  /* padding: 6px 0px; */
   margin: 0px 10px;
   border: none;
   font-family: "Poppins", sans-serif;
   background: #f7f6f6;
+  font-size: 1em;
 }
 .searching input:focus{
   outline: none;
@@ -65,7 +68,7 @@ a{
 .searching span{
   background-color: #03112c;
   color: white;
-  padding: 6px 10px;
+  padding: 8px 10px;
   cursor: pointer;
 }
 .searching span:hover{
@@ -146,6 +149,7 @@ a{
   color: black;
   padding: 12px 18px;
   border-radius: 2rem;
+  /* font-size: 1.2em; */
 }
 
 #logreg a:hover{
@@ -286,12 +290,12 @@ a{
     .searching {
       display: none;
     }
-    
-  #log-reg{
-    display:block;
 
-  }
+    #log-reg{
+    display:block;
+    }
   #log-reg a{
+    /* font-size: 2em; */
     margin: 10px 0;
     padding: 8px 25px;
   }

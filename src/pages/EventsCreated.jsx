@@ -1,13 +1,14 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import "./eventscreated.css";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { UserContext } from "../UserContext";
 
 function EventsCreated() {
   const { action } = useParams();
   const [title, setTitle] = useState("");
+  const [organizer, setOrganizer] = useState("");
   const [eventType, setEventType] = useState("");
   const [description, setDescription] = useState("");
   const [eventMode, setEventMode] = useState("");
@@ -22,6 +23,20 @@ function EventsCreated() {
   const [redirect, setRedirect] = useState("");
   const currGuests = {};
   const { eventCreated, setEventCreated } = useContext(UserContext);
+  const [events, setEvents] = useState([]);
+
+  const colors = [
+    "#408ABF",
+    "#5140BF",
+    "#BF7540",
+    "#40BF82",
+    "#4045BF",
+    "#9640BF",
+    "#BF407D",
+    "#BF4040",
+    "#40B8BF",
+    "#FFD159",
+  ];
 
   function addMoreGuests(e) {
     e.preventDefault();
@@ -42,6 +57,7 @@ function EventsCreated() {
     await axios
       .post("/add-new-event", {
         title,
+        organizer,
         location,
         description,
         eventType,
@@ -57,6 +73,12 @@ function EventsCreated() {
       });
     setRedirect("/account/createdevs");
   }
+
+  useEffect(() => {
+    axios.get("/eventscreated").then(({ data }) => {
+      setEvents(data);
+    });
+  }, []);
 
   if (redirect) {
     return <Navigate to={redirect} />;
@@ -77,6 +99,118 @@ function EventsCreated() {
               <p>{eventCreated.title}</p>
             </div>
           )}
+          <div className="events">
+            {events.length > 0 &&
+              events.map((event, index) => {
+                const color = colors[Math.floor(Math.random() * 10)];
+                console.log(color);
+                return (
+                  <div
+                    key={index}
+                    className="event"
+                    style={{ backgroundColor: color }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        flex: 3,
+                        padding: "10px 10px",
+                        alignItems: "center",
+                        position: "relative",
+                      }}
+                    >
+                      <h3>{event.title}</h3>
+                      <i
+                        style={{
+                          color: "white",
+                          fontSize: "18px",
+                          position: "absolute",
+                          top: "10px",
+                          right: "10px",
+                        }}
+                        className="fa fa-external-link"
+                      ></i>
+                      <i
+                        className="fa fa-calendar-check-o"
+                        style={{
+                          padding: "8px 8px",
+                          background: "black",
+                          color: "white",
+                          borderRadius: "5px",
+                          fontSize: "18px",
+                          position: "absolute",
+                          right: "10px",
+                          bottom: "-15px",
+                        }}
+                      ></i>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        flex: 7,
+                        backgroundColor: "white",
+                        borderBottom: "1px solid black",
+                        borderRight: "1px solid black",
+                        borderLeft: "1px solid black",
+                        padding: "10px 10px",
+                        gap: "1rem",
+                      }}
+                    >
+                      <div>{event.startDate}</div>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <p
+                          style={{
+                            textTransform: "uppercase",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {event.title}
+                        </p>
+                        <p
+                          style={{
+                            fontSize: "1.1em",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          ₹{event.price}
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          style={{
+                            fontSize: "small",
+                          }}
+                        >
+                          DESCRIPTION
+                        </p>
+                        <p style={{ fontWeight: "bold" }}>
+                          {event.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flex: 2,
+                        background: "black",
+                        color: "white",
+                        fontWeight: "bold",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Link>REGISTER INTO EVENT</Link>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
         </>
       )}
       {action === "new" && (
@@ -84,14 +218,25 @@ function EventsCreated() {
           <form action="" className="event-form" onSubmit={addNewEvent}>
             <h2>Title</h2>
             <input
+              required
               type="text"
               placeholder="Event Name, Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
 
+            <h2>Organizer Name</h2>
+            <input
+              required
+              type="text"
+              placeholder="Organizer / company name"
+              value={organizer}
+              onChange={(e) => setOrganizer(e.target.value)}
+            />
+
             <h2>Event type</h2>
             <input
+              required
               type="text"
               name="eventoptions"
               list="datalist-events"
@@ -110,6 +255,7 @@ function EventsCreated() {
             </datalist>
             <h2>Description</h2>
             <textarea
+              required
               name=""
               id=""
               cols="30"
@@ -140,6 +286,7 @@ function EventsCreated() {
             </div>
             <h2>Requirements</h2>
             <textarea
+              required
               name=""
               id="requirements"
               cols="30"
@@ -149,6 +296,7 @@ function EventsCreated() {
             ></textarea>
             <h2>location</h2>
             <input
+              required
               type="text"
               placeholder="address/ location/ url link for the event"
               value={location}
@@ -158,6 +306,7 @@ function EventsCreated() {
               <div>
                 <h3>Start Date</h3>
                 <input
+                  required
                   type="date"
                   value={startDate}
                   onChange={(e) => setStartDate(e.target.value)}
@@ -166,6 +315,7 @@ function EventsCreated() {
               <div>
                 <h3>End Date</h3>
                 <input
+                  required
                   type="date"
                   value={endDate}
                   onChange={(e) => setEndDate(e.target.value)}
@@ -174,6 +324,7 @@ function EventsCreated() {
               <div>
                 <h3>Price</h3>
                 <input
+                  required
                   type="number"
                   list="pricelist"
                   autoComplete="off"

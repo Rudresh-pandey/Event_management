@@ -57,7 +57,7 @@ function Registration() {
 
           <button type="submit">Create account</button>
           <p className="already">
-            Already have an accout? <Link to={"/login"}>Login</Link>{" "}
+            Already have an account? <Link to={"/login"}>Login</Link>{" "}
           </p>
         </form>
       </div>

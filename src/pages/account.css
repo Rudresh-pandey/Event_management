@@ -5,13 +5,26 @@
     padding: 0px;
   }
 
+  @keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+
+.reload{
+    margin-top: -20px;
+    text-align: end;
+    color: white;
+}
+
 .accountPage{
     /* display: flex;
     width: 100%;
     justify-content: space-around; */
-    margin-top:8%;
+    /* margin-top:8%; */
     padding: 0px 8%;
     /* background-color: #01112d; */
+    min-height: 100vh;
 }   
 
 
@@ -31,6 +44,16 @@
     top: 0;
     height: 35vh;
     background-color:#003E54;;
+}
+
+
+
+
+.reload button{
+    /* background-color: black; */
+    background-color: transparent;
+    border: none;
+    color: white;
 }
 
 .user{

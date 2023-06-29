@@ -7,19 +7,26 @@ export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
   const [eventCreated, setEventCreated] = useState(null);
+  const [events, setEvents] = useState([]);
   useEffect(() => {
     // window.location.reload();
-    if (!user) {
-      axios.get("/profile").then(({ data }) => {
-        setUser(data);
-        setReady(true);
+    const fetchData = async () => {
+      if (!user) {
+        await axios.get("/profile").then(({ data }) => {
+          setUser(data);
+          setReady(true);
+        });
+      }
+      await axios.get("/events").then(({ data }) => {
+        setEvents(data);
       });
-    }
+    };
+    fetchData();
   }, []);
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, ready, eventCreated, setEventCreated }}
+      value={{ user, setUser, ready, eventCreated, setEventCreated, events }}
     >
       {children}
     </UserContext.Provider>

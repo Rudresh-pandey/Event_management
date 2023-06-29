@@ -3,9 +3,11 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+
   }
 
   .footer{
+    
     background-color: black;
     height: 45vh;
     width: 100%;

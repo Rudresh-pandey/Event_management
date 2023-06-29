@@ -6,6 +6,9 @@ import Login from "./pages/Login";
 import axios from "axios";
 import { UserContextProvider } from "./UserContext";
 import AccoutPage from "./pages/AccoutPage";
+import Events from "./pages/Events";
+import EventCard from "./component/EventCard";
+import EventDetail from "./pages/EventDetail";
 
 axios.defaults.baseURL = "http://127.0.0.1:4000";
 axios.defaults.withCredentials = true;
@@ -14,7 +17,9 @@ function App() {
     <UserContextProvider>
       <div className="container">
         <Routes>
-          <Route path="/" element={<Layout img={"virtual.jpg"} />}></Route>
+          <Route path="/" element={<Layout img={"virtual.jpg"} />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/:eventid?" element={<EventDetail />} />
           <Route path="/sports" element={<Layout img={"sports.png"} />} />
           <Route path="/concert" element={<Layout img={"concert.png"} />} />
           <Route path="/virtual" element={<Layout img={"event.png"} />} />

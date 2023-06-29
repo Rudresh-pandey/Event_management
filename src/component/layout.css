@@ -1,11 +1,12 @@
+
 .hero{
-    margin-top: 5%;
+    /* margin-top: 5%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     /* max-width: 77em; */
     padding: 24px 12%;
-
+    /* min-height: 200vh; */
 }
 
 .intro{
@@ -184,3 +185,70 @@ h4{
     height: 10rem;
     background-color: cadetblue;
 }
+
+.intro-img{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:767px){
+    .hero{
+        padding: 24px 4%;
+    }
+    .intro{
+        flex-direction: column;
+    }
+
+    p.heading{
+        font-size: 3.7em;
+        line-height: 4rem;
+    }
+
+    img.eventimg{
+        height: 450px;
+        width: 500px;
+    }
+    .int1{
+        gap: 0.8rem;
+        text-align: center;
+        align-items: center;
+    }
+    .int{
+        align-items: center;
+    }
+}
+@media (max-width:460px){
+    .hero{
+        padding: 24px 4%;
+    }
+    .intro{
+        flex-direction: column;
+    }
+
+    .int2 div a{
+        padding: 15px 25px;
+    }
+
+    p.heading{
+        font-size: 2.7em;
+        line-height: 3rem;
+    }
+
+    h3.cpj{
+        font-size: 1.3em;
+    }
+
+    .int1{
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    img.eventimg{
+        height: 300px;
+        width: 350px;
+    }
+}
+
+
+
+

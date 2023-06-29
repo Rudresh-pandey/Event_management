@@ -3,6 +3,8 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import "./layout.css";
+import SearchBar from "./SearchBar";
+import EventCard from "./EventCard";
 
 function Layout({ img }) {
   return (
@@ -19,7 +21,9 @@ function Layout({ img }) {
                   &quot;Bringing Together the Finest Minds and Moments in
                   Events&quot;
                 </p>
-                <h3>create, promote, and join a wide range of events</h3>
+                <h3 className="cpj">
+                  create, promote, and join a wide range of events
+                </h3>
               </div>
               <div className="int2">
                 <div>
@@ -34,30 +38,11 @@ function Layout({ img }) {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="intro-img">
               <img src={img} alt="" className="eventimg" />
             </div>
           </div>
-          <div className="search">
-            <div className="searchInputs">
-              <input
-                type="text"
-                placeholder=" &nbsp;🔍 &nbsp;Events, Organiser, Keyword"
-              />
-
-              <input type="text" placeholder=" &nbsp;🎯 &nbsp;Anywhere" />
-              <input type="text" placeholder=" &nbsp;📅 &nbsp;Anytime" />
-              <button>Search</button>
-            </div>
-            <div className="recommendbtn">
-              <button>Today</button>
-              <button>Tomorrow</button>
-              <button>This week</button>
-              <button>Sports</button>
-              <button>Community</button>
-            </div>
-          </div>
-
+          <SearchBar />
           <div className="Events">
             <h3>Event Recommendation</h3>
             <div className="bottom">
@@ -101,17 +86,10 @@ function Layout({ img }) {
                   </label>
                 </div>
               </div>
-
-              <div className="evInfo">
-                <div className="ev"></div>
-                <div className="ev"></div>
-                <div className="ev"></div>
-              </div>
+              <EventCard />
             </div>
-            <div className="EvArray"></div>
           </div>
         </div>
-
         <Footer />
       </div>
     </>

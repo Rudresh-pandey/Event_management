@@ -120,3 +120,43 @@ button#savebtn{
 button#savebtn:hover{
     background-color: rgb(254, 180, 43);
 }
+
+.events{
+    padding: 1.5rem 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.event{
+    height: 25rem;
+    width: 22rem;
+    display: flex;
+    flex-direction: column;
+    transition: all .30s ease;
+}
+
+.event:hover{
+    cursor: pointer;
+    height: 26rem;
+    width: 23rem;
+    box-shadow: 3px 3px 7px 1px #141414e0;
+}
+
+.event h3{
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+}
+
+
+@media (min-width: 600px) {
+    .events { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+    .events { grid-template-columns: repeat(3, 1fr); }
+  }

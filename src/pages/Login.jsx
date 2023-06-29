@@ -83,7 +83,7 @@ function Login() {
 
           <button type="submit">Login</button>
           <p className="already">
-            don&apos;t have an accout?{" "}
+            don&apos;t have an account?{" "}
             <Link to={"/registration"}>Create account</Link>{" "}
           </p>
         </form>

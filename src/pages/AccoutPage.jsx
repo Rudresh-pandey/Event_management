@@ -22,9 +22,31 @@ function AccoutPage() {
   if (subpage === undefined) {
     subpage = "profile";
   }
-
+  function reloadPage() {
+    window.location.reload();
+  }
   if (!ready) {
-    return "loading...";
+    return (
+      <div
+        style={{
+          textAlign: "center",
+          marginTop: "20%",
+        }}
+      >
+        <p>
+          {" "}
+          <i
+            className="fa fa-refresh"
+            style={{
+              fontSize: 20 + "px",
+              animation: `spin 1s linear infinite`,
+            }}
+          ></i>{" "}
+          hit refresh{" "}
+        </p>
+        <button onClick={reloadPage}>Refresh</button>
+      </div>
+    );
   }
   if (ready && !user) {
     return <Navigate to={"/login"} />;
@@ -69,7 +91,13 @@ function AccoutPage() {
         {subpage === "profile" && (
           <div className="profile">
             <div className="bg"></div>
-
+            <p className="reload">
+              can&apos;t see your details? Reload here &nbsp;
+              <button
+                className="fa fa-refresh"
+                style={{ fontSize: 20 + "px" }}
+              ></button>
+            </p>
             <div className="user">
               <div className="userProfile">
                 <div className="userImg">
@@ -81,7 +109,7 @@ function AccoutPage() {
                     style={{ fontSize: "150px" }}
                   ></i> */}
                 <div className="username">
-                  <h1>Rudresh Pandey</h1>
+                  <h1>{user.name}</h1>
                   <h3>{user.position || "Your Position"}</h3>
                 </div>
                 <div className="editInfo">
