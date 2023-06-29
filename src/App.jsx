@@ -7,7 +7,7 @@ import axios from "axios";
 import { UserContextProvider } from "./UserContext";
 import AccoutPage from "./pages/AccoutPage";
 import Events from "./pages/Events";
-import EventCard from "./component/EventCard";
+// import EventCard from "./component/EventCard";
 import EventDetail from "./pages/EventDetail";
 
 axios.defaults.baseURL = "http://127.0.0.1:4000";

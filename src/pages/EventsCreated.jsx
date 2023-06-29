@@ -16,7 +16,7 @@ function EventsCreated() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [price, setPrice] = useState("");
-  const [requirement, setRequirement] = useState("");
+  const [requirements, setrequirements] = useState("");
   const [addedGuests, setAddedGuests] = useState([]);
   const [guestName, setGuestName] = useState("");
   const [guestPos, setGuestPos] = useState("");
@@ -62,14 +62,14 @@ function EventsCreated() {
         description,
         eventType,
         eventMode,
-        requirement,
+        requirements,
         startDate,
         endDate,
         price,
       })
       .then(({ data }) => {
         setEventCreated(data);
-        console.log(eventCreated);
+        // console.log(eventCreated);
       });
     setRedirect("/account/createdevs");
   }
@@ -284,15 +284,15 @@ function EventsCreated() {
                 <label htmlFor="online">Online</label>
               </div>
             </div>
-            <h2>Requirements</h2>
+            <h2>requirements</h2>
             <textarea
               required
               name=""
-              id="requirements"
+              id="requirementss"
               cols="30"
               rows="10"
-              value={requirement}
-              onChange={(e) => setRequirement(e.target.value)}
+              value={requirements}
+              onChange={(e) => setrequirements(e.target.value)}
             ></textarea>
             <h2>location</h2>
             <input
