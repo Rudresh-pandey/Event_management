@@ -8,6 +8,7 @@ export function UserContextProvider({ children }) {
   const [ready, setReady] = useState(false);
   const [eventCreated, setEventCreated] = useState(null);
   const [events, setEvents] = useState([]);
+  const [query, setQuery] = useState([]);
   useEffect(() => {
     // window.location.reload();
     const fetchData = async () => {
@@ -26,7 +27,16 @@ export function UserContextProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, ready, eventCreated, setEventCreated, events }}
+      value={{
+        user,
+        setUser,
+        ready,
+        eventCreated,
+        setEventCreated,
+        events,
+        query,
+        setQuery,
+      }}
     >
       {children}
     </UserContext.Provider>

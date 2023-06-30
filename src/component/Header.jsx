@@ -5,8 +5,9 @@ import { UserContext } from "../UserContext";
 import axios from "axios";
 
 function Header() {
-  const { user, setUser } = useContext(UserContext);
   const [hamMenu, setHamMenu] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const { user, setUser, setQuery } = useContext(UserContext);
   const navigate = useNavigate();
   async function logoutUser() {
     try {
@@ -22,6 +23,12 @@ function Header() {
   function openmenu() {
     setHamMenu(!hamMenu);
   }
+
+  function searchEvent() {
+    // console.log(searchInput);
+    setQuery([searchInput]);
+  }
+
   return (
     <>
       <div className="navbar">
@@ -56,10 +63,14 @@ function Header() {
             </div>
 
             <div className="searching">
-              <input type="text" />
-              <span>
+              <input
+                type="text"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+              <button onClick={searchEvent}>
                 <i className="fa fa-search"></i>
-              </span>
+              </button>
             </div>
           </div>
         ) : (
@@ -77,10 +88,14 @@ function Header() {
               </div>
             </div>
             <div className="searching">
-              <input type="text" />
-              <span>
+              <input
+                type="text"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
+              />
+              <button onClick={searchEvent}>
                 <i className="fa fa-search"></i>
-              </span>
+              </button>
             </div>
           </div>
         )}

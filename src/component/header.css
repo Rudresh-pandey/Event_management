@@ -66,13 +66,14 @@ a{
   margin: 0px 30px;
 }
 
-.searching span{
+.searching button{
   background-color: #03112c;
   color: white;
   padding: 8px 10px;
+  border: none;
   cursor: pointer;
 }
-.searching span:hover{
+.searching button:hover{
   background-color: #2a62fe;
   transition: .50s ease;
 }

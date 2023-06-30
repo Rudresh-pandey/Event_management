@@ -6,35 +6,16 @@ function SearchBar() {
   const [eventName, setEventName] = useState("");
   const [eventLoc, setEventLoc] = useState("");
   const [eventDate, setEventDate] = useState("");
-  const { events, setEvents } = useContext(UserContext);
-  async function searchEvent() {
-    if (eventName) {
-      const { data } = await axios.get("/searcheventbyname", {
-        eventName: eventName.toLowerCase(),
-      });
-      if (data) {
-        setEvents(data);
-      }
-    }
-    if (eventLoc) {
-      await axios
-        .get("/searcheventbylocation", {
-          eventLoc: eventLoc.toLowerCase(),
-        })
-        .then(({ data }) => {
-          setEvents(data);
-        });
-    }
-    if (eventDate) {
-      await axios
-        .get("/searcheventbydate", {
-          eventDate,
-        })
-        .then(({ data }) => {
-          setEvents(data);
-        });
-    }
+  const { setQuery } = useContext(UserContext);
+
+  function searchEvent() {
+    setQuery([
+      eventName.toLowerCase(),
+      eventLoc.toLowerCase(),
+      eventDate.toLowerCase(),
+    ]);
   }
+
   return (
     <div className="search">
       <div className="searchInputs">
