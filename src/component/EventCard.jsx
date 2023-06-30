@@ -114,7 +114,11 @@ function EventCard() {
                     >
                       DESCRIPTION
                     </p>
-                    <p style={{ fontWeight: "bold" }}>{event.description}</p>
+                    <p style={{ fontWeight: "bold" }}>
+                      {event.description.length > 130
+                        ? event.description.substring(0, 130) + " ..."
+                        : event.description}
+                    </p>
                   </div>
                 </div>
                 <div

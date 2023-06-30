@@ -123,7 +123,11 @@ function EventsJoined() {
                   >
                     DESCRIPTION
                   </p>
-                  <p style={{ fontWeight: "bold" }}>{event.description}</p>
+                  <p style={{ fontWeight: "bold" }}>
+                    {event.description > 10
+                      ? event.description.substring(0, 10) + "..."
+                      : event.description}
+                  </p>
                 </div>
               </div>
               <div

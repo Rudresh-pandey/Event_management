@@ -190,7 +190,9 @@ function EventsCreated() {
                           DESCRIPTION
                         </p>
                         <p style={{ fontWeight: "bold" }}>
-                          {event.description}
+                          {event.description.length > 150
+                            ? event.description.substring(0, 150) + "..."
+                            : event.description}
                         </p>
                       </div>
                     </div>
