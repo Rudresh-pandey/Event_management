@@ -43,7 +43,10 @@ function EventDetail() {
           <div
             style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div
+              className="eventinfo"
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
               <div>
                 <h1
                   style={{
@@ -72,7 +75,7 @@ function EventDetail() {
                 <p style={{ marginTop: "20px" }}>
                   {" "}
                   <span style={{ fontWeight: "bold" }}>
-                    Event Started on :
+                    Event Starts on :
                   </span>{" "}
                   {event.startDate}
                 </p>

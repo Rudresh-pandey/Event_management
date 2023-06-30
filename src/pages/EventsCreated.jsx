@@ -58,7 +58,7 @@ function EventsCreated() {
 
     await axios
       .post("/add-new-event", {
-        title,
+        title: title.toLowerCase(),
         organizer,
         location,
         description,

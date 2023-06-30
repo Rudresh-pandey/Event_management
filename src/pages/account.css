@@ -214,7 +214,7 @@ label div input{
 
 
 
-@media (max-width:460px){
+@media (max-width:450px){
     .accountPage{
         padding: 24px 2%;
     }
@@ -250,9 +250,9 @@ label div input{
 }
 
 @media (max-width:760px){
-    .accountPage{
+    /* .accountPage{
         padding: 24px 2%;
-    }
+    } */
     .userProfile{
         align-items: flex-start;
     }

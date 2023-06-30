@@ -44,7 +44,7 @@ function Layout({ img }) {
           </div>
           <SearchBar />
           <div className="Events">
-            <h3>Event Recommendation</h3>
+            <h3 style={{ marginTop: "2rem" }}>Event Recommendation</h3>
             <div className="bottom">
               {/* <div className="filter">
                 <p>filers</p>

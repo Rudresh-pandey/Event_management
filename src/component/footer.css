@@ -9,7 +9,7 @@
   .footer{
     
     background-color: black;
-    height: 45vh;
+    /* height: 45vh; */
     width: 100%;
     color: white;
     padding: 24px 8%;
@@ -69,4 +69,38 @@
 .lower div{
     display: flex;
     gap: 1rem;
+}
+.lower div i{
+  font-size: 24px;
+}
+
+
+@media (max-width:765px){
+  .upper{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footerlinks{
+    gap:2rem;
+  }
+  .footerlink{
+    margin: 0;
+  }
+
+}
+
+@media (max-width:460px){
+  .footerlinks{
+    flex-direction: column;
+  }
+  .lower{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .lower div{
+    justify-content: space-between;
+  }
+  .lower div i{
+    font-size: 32px;
+  }
 }

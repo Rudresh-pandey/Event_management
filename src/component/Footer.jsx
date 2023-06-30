@@ -42,22 +42,10 @@ function Footer() {
         <div className="lower">
           <p>Event Cafe © 2023. All Rights Reserved</p>
           <div>
-            <i
-              className="fa fa-facebook-square"
-              style={{ fontSize: 24 + "px" }}
-            ></i>
-            <i
-              className="fa fa-github-square"
-              style={{ fontSize: 24 + "px" }}
-            ></i>
-            <i
-              className="fa fa-linkedin-square"
-              style={{ fontSize: 24 + "px" }}
-            ></i>
-            <i
-              className="fa fa-twitter-square"
-              style={{ fontSize: 24 + "px" }}
-            ></i>
+            <i className="fa fa-facebook-square"></i>
+            <i className="fa fa-github-square"></i>
+            <i className="fa fa-linkedin-square"></i>
+            <i className="fa fa-twitter-square"></i>
           </div>
         </div>
       </div>

@@ -135,6 +135,7 @@ p.heading{
 
 
 .Events{
+    
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -246,6 +247,18 @@ h4{
     img.eventimg{
         height: 300px;
         width: 350px;
+    }
+    .hiddeninput{
+        display: none;
+    }
+    .searchInputs input{
+        width: 100%;
+    }
+    .recommendbtn{
+        display: none;
+    }
+    .searchInputs{
+        gap: 1rem;
     }
 }
 
