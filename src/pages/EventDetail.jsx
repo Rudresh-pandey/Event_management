@@ -13,12 +13,17 @@ function EventDetail() {
   const params = useParams();
 
   async function registerIntoEvent() {
-    if (!user) {
-      return navigate("/login");
+    if (confirm(`confirm your registration to : ${event.title} ?`)) {
+      if (!user) {
+        return navigate("/login");
+      }
+      await axios.post("/joinEvent", {
+        event: event._id,
+      });
+      alert(
+        `REGISTERED into ${event.title} , event will start from ${event.startDate}`
+      );
     }
-    await axios.post("/joinEvent", {
-      event: event._id,
-    });
   }
 
   useEffect(() => {
@@ -109,7 +114,7 @@ function EventDetail() {
                   }}
                 >
                   <p>{event.mode}</p>
-                  <p>₹{event.price}</p>
+                  <p> {event.price === 0 ? `FREE` : event.price}</p>
                 </div>
 
                 <p>{event.organizer}</p>

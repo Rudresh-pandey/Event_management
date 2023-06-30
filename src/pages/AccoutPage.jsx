@@ -7,6 +7,7 @@ import "./account.css";
 import axios from "axios";
 import EventsCreated from "./EventsCreated";
 import Footer from "../component/Footer";
+import EventsJoined from "./EventsJoined";
 
 function AccoutPage() {
   const [glink, setGlink] = useState("");
@@ -265,6 +266,7 @@ function AccoutPage() {
           </div>
         )}
         {subpage === "createdevs" && <EventsCreated />}
+        {subpage === "events" && <EventsJoined />}
       </div>
       <Footer />
     </>

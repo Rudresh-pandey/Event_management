@@ -103,7 +103,7 @@ function EventCard() {
                         fontWeight: "bold",
                       }}
                     >
-                      ₹{event.price}
+                      {event.price === 0 ? `FREE` : `₹${event.price}`}
                     </p>
                   </div>
                   <div>
