@@ -32,7 +32,7 @@ function EventsJoined() {
   //   console.log(joinedEvents);
 
   return (
-    <div className="events">
+    <div className="events" style={{ minHeight: "100vh" }}>
       {joinedEvents?.length > 0 &&
         joinedEvents.map((event, index) => {
           const color = colors[Math.floor(Math.random() * 10)];

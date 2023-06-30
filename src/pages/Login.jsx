@@ -31,31 +31,6 @@ function Login() {
   }
 
   return (
-    // <div className="formpage">
-    //   <h2 className="">Login</h2>
-    //   <form action="" className="form" onSubmit={loginUser}>
-    //     <input
-    //       type="email"
-    //       placeholder="youremail@gmail.com"
-    //       className=""
-    //       value={email}
-    //       onChange={(e) => {
-    //         setEmail(e.target.value);
-    //       }}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="password"
-    //       value={password}
-    //       onChange={(e) => {
-    //         setPassword(e.target.value);
-    //       }}
-    //     />
-
-    //     <button type="submit">Login</button>
-    //   </form>
-    // </div>
-
     <div className="formpage">
       <div className="page">
         <div className="logo">

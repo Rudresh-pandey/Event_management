@@ -1,4 +1,4 @@
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./eventscreated.css";
 
 import { useContext, useEffect, useState } from "react";
@@ -24,6 +24,8 @@ function EventsCreated() {
   const currGuests = {};
   const { eventCreated, setEventCreated } = useContext(UserContext);
   const [events, setEvents] = useState([]);
+
+  const navigate = useNavigate();
 
   const colors = [
     "#408ABF",
@@ -103,12 +105,12 @@ function EventsCreated() {
             {events.length > 0 &&
               events.map((event, index) => {
                 const color = colors[Math.floor(Math.random() * 10)];
-                console.log(color);
                 return (
                   <div
                     key={index}
                     className="event"
                     style={{ backgroundColor: color }}
+                    onClick={() => navigate(`/events/${event._id}`)}
                   >
                     <div
                       style={{

@@ -99,3 +99,13 @@
 .already a:hover{
     color: #408cff;
 }
+
+@media (max-width:1024px) {
+    .formpage{
+        justify-content: center;
+    }
+    .side{
+        display: none;
+    }
+}
+

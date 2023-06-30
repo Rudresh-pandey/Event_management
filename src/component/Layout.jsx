@@ -46,7 +46,7 @@ function Layout({ img }) {
           <div className="Events">
             <h3>Event Recommendation</h3>
             <div className="bottom">
-              <div className="filter">
+              {/* <div className="filter">
                 <p>filers</p>
                 <div className="loc">
                   <h4>Location</h4>
@@ -85,7 +85,7 @@ function Layout({ img }) {
                     <span>Free</span>
                   </label>
                 </div>
-              </div>
+              </div> */}
               <EventCard />
             </div>
           </div>

@@ -11,7 +11,7 @@ function Events() {
     <>
       <div>
         <Header />
-        <div className="hero">
+        <div className="hero" style={{ minHeight: "100vh" }}>
           <SearchBar />
           <EventCard />
         </div>

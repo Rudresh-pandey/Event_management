@@ -114,10 +114,13 @@ function EventDetail() {
                   }}
                 >
                   <p>{event.mode}</p>
-                  <p> {event.price === 0 ? `FREE` : event.price}</p>
+                  <p> {event.price === 0 ? `FREE` : `₹ ${event.price}`}</p>
                 </div>
 
-                <p>{event.organizer}</p>
+                <h3>
+                  {" "}
+                  <small>by-</small> {event.organizer}
+                </h3>
               </div>
             </div>
 

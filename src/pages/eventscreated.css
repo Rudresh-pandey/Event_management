@@ -1,5 +1,7 @@
 
-
+.eventpage{
+    min-height: 100vh;
+}
 .createbtn{
     text-align: center;
 }
@@ -139,8 +141,8 @@ button#savebtn:hover{
 
 .event:hover{
     cursor: pointer;
-    height: 26rem;
-    width: 23rem;
+    /* height: 26rem;
+    width: 23rem; */
     box-shadow: 3px 3px 7px 1px #141414e0;
 }
 

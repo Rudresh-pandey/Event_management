@@ -18,6 +18,7 @@ function EventCard() {
     "#BF4040",
     "#40B8BF",
     "#FFD159",
+    "#4036BF",
   ];
   return (
     <>
@@ -25,8 +26,7 @@ function EventCard() {
         {events.length > 0 &&
           events.map((event, index) => {
             const color = colors[Math.floor(Math.random() * 10)];
-            // console.log(color);
-            // console.log(event._id);
+
             return (
               <div
                 key={index}
