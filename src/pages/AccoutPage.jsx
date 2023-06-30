@@ -95,6 +95,7 @@ function AccoutPage() {
             <p className="reload">
               can&apos;t see your details? Reload here &nbsp;
               <button
+                onClick={reloadPage}
                 className="fa fa-refresh"
                 style={{ fontSize: 20 + "px" }}
               ></button>
@@ -102,17 +103,20 @@ function AccoutPage() {
             <div className="user">
               <div className="userProfile">
                 <div className="userImg">
-                  <img src="man.png" alt="" />
-                  <input type="file" />
+                  <div className="userimg">
+                    <img src="man.png" alt="" />
+                    <input type="file" />
+                  </div>
+                  <div className="username">
+                    <h1>{user.name}</h1>
+                    <h3>{user.position || "Your Position"}</h3>
+                  </div>
                 </div>
                 {/* <i
                     className="fa fa-user-circle-o "
                     style={{ fontSize: "150px" }}
                   ></i> */}
-                <div className="username">
-                  <h1>{user.name}</h1>
-                  <h3>{user.position || "Your Position"}</h3>
-                </div>
+
                 <div className="editInfo">
                   <button id="edit" onClick={editInfo}>
                     Edit
@@ -130,16 +134,17 @@ function AccoutPage() {
                       <div className="perInfo">
                         <label htmlFor="">
                           <small>First Name</small>
-                          <p>Rudresh</p>
+                          <p>{user.name.split(" ").slice(0, -1).join(" ")}</p>
                         </label>
                         <label htmlFor="">
                           <small>Email address</small>
-                          <p>rudreshpandey@gmail.com</p>{" "}
+                          <p>{user.email}</p>{" "}
                         </label>
                       </div>
                       <div className="perInfo">
                         <label htmlFor="">
-                          <small>Last Name</small> <p>Pandey</p>
+                          <small>Last Name</small>{" "}
+                          <p>{user.name.split(" ").slice(-1).join(" ")}</p>
                         </label>
 
                         <label htmlFor="">
@@ -151,13 +156,15 @@ function AccoutPage() {
                     <label htmlFor="">
                       <small>Bio</small>
                       <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        {user.bio
+                          ? user.bio
+                          : `Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. Quia neque culpa sed ut molestias, praesentium
                         nobis nulla placeat, nesciunt, quisquam distinctio! Eos
                         officiis quia quaerat dicta nisi consectetur, veritatis
                         expedita minima placeat dolorum fuga quis et facere
                         quasi porro consequatur quam rerum a temporibus. Nostrum
-                        hic dolorem alias error quaerat?
+                        hic dolorem alias error quaerat?`}
                       </p>
                     </label>
                   </div>

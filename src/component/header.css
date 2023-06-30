@@ -40,7 +40,8 @@ a{
   padding: 5px 0px;
   margin: 0px 30px;
   transition: all .5s ease;
-  color: #7d7d7d;
+  color: #bebebe;
+  /* color: white; */
   /* font-size: 1.2em; */
 }
 

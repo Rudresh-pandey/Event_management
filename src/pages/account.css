@@ -18,36 +18,8 @@
 }
 
 .accountPage{
-    /* display: flex;
-    width: 100%;
-    justify-content: space-around; */
-    /* margin-top:8%; */
-    padding: 0px 8%;
-    /* background-color: #01112d; */
-    min-height: 100vh;
+    padding: 24px 8%;
 }   
-
-
-.profile{
-    display: flex;
-    /* width: 100%; */
-    /* justify-content: space-around; */
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.bg{
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    height: 35vh;
-    background-color:#003E54;;
-}
-
-
-
 
 .reload button{
     /* background-color: black; */
@@ -63,9 +35,20 @@
 .userImg{
     /* position: absolute; */
     display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 1rem;
+}
+.userimg{
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+.username{
+    display: flex;
+    flex-direction: column;
+    /* align-items:flex-start; */
 }
 .userImg img{
     /* margin-top: 2%; */
@@ -82,7 +65,7 @@
 .userProfile{
     display: flex;
     align-items: center;
-    /* position: relative; */
+    justify-content: space-between;
 
 }
 
@@ -98,19 +81,19 @@
 }
 
 .username{
+    display: flex;
     padding: 20px 20px;
     margin-top: -5%;
+    align-items: flex-start;
 }
 
 .username h1{
     font-family: 'Poppins', sans-serif;
-    color: white;
+    /* color: white; */
     font-size: 3em;
 }
 
-.username h3{
-    color: white;
-}
+
 
 .bio{
     border: 1px solid rgb(209 209 209);
@@ -227,4 +210,70 @@ label div{
 
 label div input{
     padding: 10px 10px;
+}
+
+
+
+@media (max-width:460px){
+    .accountPage{
+        padding: 24px 2%;
+    }
+    .userProfile{
+        align-items: flex-start;
+    }
+    .userImg{
+        flex-direction: column;
+    }
+    .username{
+        padding: 20px 10px;
+    }
+    .username h1{
+        font-size: 2em;
+    }
+    .userDetail{
+        padding: 0;
+    }
+    .person{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .links{
+        gap: 0;
+    }
+    .link{
+        flex-direction: column;
+        gap: 0;
+    }
+    label div input{
+        width: 100%;
+    }
+}
+
+@media (max-width:760px){
+    .accountPage{
+        padding: 24px 2%;
+    }
+    .userProfile{
+        align-items: flex-start;
+    }
+    .userImg{
+        flex-direction: column;
+    }
+    .username{
+        padding: 20px 10px;
+    }
+    .username h1{
+        font-size: 2em;
+    }
+    .userDetail{
+        padding: 0;
+    }
+    .person{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .links{
+        gap: 0;
+    }
+
 }
