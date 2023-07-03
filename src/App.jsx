@@ -10,7 +10,7 @@ import Events from "./pages/Events";
 // import EventCard from "./component/EventCard";
 import EventDetail from "./pages/EventDetail";
 
-axios.defaults.baseURL = "http://127.0.0.1:4000";
+axios.defaults.baseURL = "https://ev-management-backend.vercel.app/";
 axios.defaults.withCredentials = true;
 function App() {
   return (
