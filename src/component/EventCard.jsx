@@ -27,9 +27,18 @@ function EventCard() {
           // query[0](
           events
             .filter((event) => {
-              if (query[0] === undefined || query[0] === "") {
+              if (
+                (query[0] === undefined &&
+                  query[1] === undefined &&
+                  query[2] === undefined) ||
+                (query[0] === "" && query[1] === "" && query[2] === "")
+              ) {
                 return event;
               } else if (event.title.toLowerCase() === query[0]) {
+                return event;
+              } else if (event.location.toLowerCase() === query[1]) {
+                return event;
+              } else if (event.startDate == query[2]) {
                 return event;
               }
             })

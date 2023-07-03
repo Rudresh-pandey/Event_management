@@ -9,11 +9,7 @@ function SearchBar() {
   const { setQuery } = useContext(UserContext);
 
   function searchEvent() {
-    setQuery([
-      eventName.toLowerCase(),
-      eventLoc.toLowerCase(),
-      eventDate.toLowerCase(),
-    ]);
+    setQuery([eventName.toLowerCase(), eventLoc.toLowerCase(), eventDate]);
   }
 
   return (
