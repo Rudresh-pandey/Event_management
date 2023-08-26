@@ -15,7 +15,7 @@ function Layout({ img }) {
           <div className="intro">
             <div className="int">
               <div className="int1">
-                <p className="preheading">100+ EVENTS ORGANISED</p>
+                <p className="preheading">100+ EVENTS ORGANISED 🔥</p>
                 <p className="heading">The Gateways for Events</p>
                 <p className="subheading">
                   &quot;Bringing Together the Finest Minds and Moments in

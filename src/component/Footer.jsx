@@ -34,7 +34,7 @@ function Footer() {
             </div>
             <div className="footerlink">
               <h3>Contact</h3>
-              <Link>rudreshpandey2002@gmail.com</Link>
+              <Link>eventcafedevs05@gmail.com</Link>
               <p>(+91) 8282428</p>
             </div>
           </div>

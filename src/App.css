@@ -1,3 +1,14 @@
 .container{
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    background-color: black;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color:#2a62fe;
+    /* background-color: yellow; */
+    border-radius: 20px;
 }

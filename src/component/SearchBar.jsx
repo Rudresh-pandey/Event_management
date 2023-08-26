@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import "./layout.css";
 import { UserContext } from "../UserContext";
-import axios from "axios";
+// import axios from "axios";
 function SearchBar() {
   const [eventName, setEventName] = useState("");
   const [eventLoc, setEventLoc] = useState("");
@@ -39,9 +39,8 @@ function SearchBar() {
         <button onClick={searchEvent}>Search</button>
       </div>
       <div className="recommendbtn">
-        <button>Today</button>
-        <button>Tomorrow</button>
-        <button>This week</button>
+        <button>Free</button>
+        <button>Concerts</button>
         <button>Sports</button>
         <button>Community</button>
       </div>

@@ -121,21 +121,29 @@ p.heading{
 }
 
 .recommendbtn{
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit,minmax(70px,1fr)); */
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.5rem;
 }
 
 .recommendbtn button{
+    max-width: auto;
     cursor: pointer;
     padding: 6px 12px;
-    border-radius: 30px;
+    border-radius: 8px;
     border: none;
-    background-color: #F5F7F6;
+    color: black;
+    font-weight: bolder;
+    background-color: #efecec;
+}
+
+.recommendbtn button:hover{
+    color:#013fe9;
 }
 
 
 .Events{
-    
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -255,7 +263,8 @@ h4{
         width: 100%;
     }
     .recommendbtn{
-        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
     }
     .searchInputs{
         gap: 1rem;

@@ -219,6 +219,9 @@ a{
   display: flex;
 }
 
+.hidemenu a.activePage{
+  color: #2a62fe;
+}
 
 
 @media (max-width: 1280px){

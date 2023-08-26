@@ -71,7 +71,12 @@
     gap: 1rem;
 }
 .lower div i{
-  font-size: 24px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: all .50s cubic-bezier(0.08, 0.26, 0.16, 1.16);
+}
+.lower div i:hover{
+  color:#2a62fe;
 }
 
 
@@ -98,9 +103,9 @@
     gap: 1rem;
   }
   .lower div{
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .lower div i{
-    font-size: 32px;
+    font-size: 30px;
   }
 }
