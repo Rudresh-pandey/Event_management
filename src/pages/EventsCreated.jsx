@@ -9,7 +9,7 @@ function EventsCreated() {
   const { action } = useParams();
   const [title, setTitle] = useState("");
   const [organizer, setOrganizer] = useState("");
-  const [eventType, setEventType] = useState("");
+  const [type, setType] = useState("");
   const [description, setDescription] = useState("");
   const [eventMode, setEventMode] = useState("");
   const [location, setLocation] = useState("");
@@ -62,7 +62,7 @@ function EventsCreated() {
         organizer,
         location,
         description,
-        eventType,
+        type,
         eventMode,
         requirements,
         startDate,
@@ -245,8 +245,8 @@ function EventsCreated() {
               name="eventoptions"
               list="datalist-events"
               placeholder="event type like:"
-              value={eventType}
-              onChange={(e) => setEventType(e.target.value)}
+              value={type}
+              onChange={(e) => setType(e.target.value)}
             />
             <datalist id="datalist-events">
               <select name="eventoptions" id="">

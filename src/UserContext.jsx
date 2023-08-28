@@ -9,6 +9,7 @@ export function UserContextProvider({ children }) {
   const [eventCreated, setEventCreated] = useState(null);
   const [events, setEvents] = useState([]);
   const [query, setQuery] = useState([]);
+  const [filterItem, setFilterItem] = useState("");
   useEffect(() => {
     // window.location.reload();
     const fetchData = async () => {
@@ -36,6 +37,8 @@ export function UserContextProvider({ children }) {
         events,
         query,
         setQuery,
+        filterItem,
+        setFilterItem,
       }}
     >
       {children}

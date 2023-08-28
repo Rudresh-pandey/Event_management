@@ -73,6 +73,13 @@
     border: none;
     background-color: black;
     color: white;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.form button:hover{
+    /* color: rgb(255, 234, 0); */
+    color: #a0c6fe;
 }
 
 .logo a{

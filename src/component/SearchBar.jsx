@@ -6,7 +6,8 @@ function SearchBar() {
   const [eventName, setEventName] = useState("");
   const [eventLoc, setEventLoc] = useState("");
   const [eventDate, setEventDate] = useState("");
-  const { setQuery } = useContext(UserContext);
+  const [filter, setFilter] = useState("all");
+  const { setQuery, setFilterItem } = useContext(UserContext);
 
   function searchEvent() {
     setQuery([eventName.toLowerCase(), eventLoc.toLowerCase(), eventDate]);
@@ -39,10 +40,11 @@ function SearchBar() {
         <button onClick={searchEvent}>Search</button>
       </div>
       <div className="recommendbtn">
-        <button>Free</button>
-        <button>Concerts</button>
-        <button>Sports</button>
-        <button>Community</button>
+        <button onClick={() => setFilterItem("free")}>Free</button>
+        <button onClick={() => setFilterItem("concert")}>Concerts</button>
+        <button onClick={() => setFilterItem("sports")}>Sports</button>
+        <button onClick={() => setFilterItem("community")}>Community</button>
+        <button onClick={() => setFilterItem("all")}>CLEAR ✖</button>
       </div>
     </div>
   );

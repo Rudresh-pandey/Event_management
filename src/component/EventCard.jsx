@@ -5,7 +5,7 @@ import { UserContext } from "../UserContext";
 function EventCard() {
   const navigate = useNavigate();
 
-  const { events, query } = useContext(UserContext);
+  const { events, query, filterItem } = useContext(UserContext);
 
   const colors = [
     "#408ABF",
@@ -27,14 +27,30 @@ function EventCard() {
           // query[0](
           events
             .filter((event) => {
+              // console.log(query[0], query[1]);
+
               if (
                 (query[0] === undefined &&
                   query[1] === undefined &&
-                  query[2] === undefined) ||
-                (query[0] === "" && query[1] === "" && query[2] === "")
+                  query[2] === undefined &&
+                  query[3] === undefined) ||
+                (query[0] === "" &&
+                  query[1] === "" &&
+                  query[2] === "" &&
+                  query[3] === "")
               ) {
                 return event;
-              } else if (event.title.toLowerCase() === query[0]) {
+              }
+              // filter results
+              else if (filterItem === "all") {
+                return event;
+              } else if (event.price === 0 && filterItem === "free") {
+                return event;
+              } else if (event.type.toLowerCase() === filterItem) {
+                return event;
+              }
+              // search results
+              else if (event.title.toLowerCase() === query[0]) {
                 return event;
               } else if (event.location.toLowerCase() === query[1]) {
                 return event;

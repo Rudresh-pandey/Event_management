@@ -39,10 +39,12 @@ a{
 .urls a{
   padding: 5px 0px;
   margin: 0px 30px;
-  transition: all .5s ease;
+  transition: all .3s ease;
   color: #bebebe;
-  /* color: white; */
-  /* font-size: 1.2em; */
+}
+
+.urls a.link{
+  color: black;
 }
 
 .searching input{
@@ -84,12 +86,19 @@ a{
 }
 
 .urls a:hover{
-  color: black;
+  color:#2a62fe;
+  /* color: black; */
+  /* font-weight: 600; */
 }
-
-.urls a.active{
-  color: black;
+.url-links.open a.link{
+  color: #bebebe;
 }
+.url-links.open a.link:hover{
+  color: white;
+}
+/* .urls a.active{
+  color: black;
+} */
 
 .right{
   display: flex;
@@ -132,16 +141,22 @@ a{
 
 
 .user-links a{
+  color: black;
   display: block;
   margin: 12px 0;
   padding: 0px 25px;
   transition: all .50s ease;
 }
 
+.user-links.open a{
+  color:#bebebe;
+}
+
 .user-links a:hover{
   color: white;
   transform: translateY(5px);
 }
+
 
 .user-links.open{
   right: 2%;
